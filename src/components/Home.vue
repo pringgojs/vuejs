@@ -13,7 +13,8 @@
         <v-carousel-item
           v-for="meetup in meetups"
           :src="meetup.imageUrl"
-          :key="meetup.id">
+          :key="meetup.id"
+          @click="onLoadMeetup(meetup.id)">
             <div class="title"> {{ meetup.title }}</div>
           </v-carousel-item>
       </v-carousel>
@@ -34,6 +35,11 @@
           { imageUrl: 'http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/France/Paris/Paris%20small-xxlarge.jpg', id: 'sdjbs23423', title: 'Meetup Laz Vegas' },
           { imageUrl: 'http://multi.speedybooker.com/en-GB/pool/paris-1.jpg', id: 'sdhj273656', title: 'Efiffel Tower' }
         ]
+      }
+    },
+    methods: {
+      onLoadMeetup (id) {
+        this.$router.push('/meetups/' + id)
       }
     }
   }
