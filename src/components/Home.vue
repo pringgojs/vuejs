@@ -1,53 +1,33 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+  <v-container>
+    <v-layout row wrap>
+      <v-flex xs12 sm6 class="text-xs-center text-sm-right">
+        <v-btn large router to="/meetups" class="info">Explore Meetups</v-btn>
+      </v-flex>
+      <v-flex xs12 sm6 class="text-xs-center text-sm-left">
+        <v-btn large router to="/meetups/new" class="info">Organize Meetup</v-btn>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap>
+      <v-carousel>
+        <v-carousel-item
+          v-for="meetup in meetups"
+          :src="meetup.imageUrl"
+          :key="meetup.id"></v-carousel-item>
+      </v-carousel>
+    </v-layout>
+  </v-container>
 </template>
 
-<script>
-export default {
-  name: 'hello',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+<script type="text/javascript">
+  export default {
+    data () {
+      return {
+        meetups: [
+          { imageUrl: 'http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/France/Paris/Paris%20small-xxlarge.jpg', id: 'sdjbs23423', title: 'Meetup Laz Vegas' },
+          { imageUrl: 'http://multi.speedybooker.com/en-GB/pool/paris-1.jpg', id: 'sdhj273656', title: 'Efiffel Tower' }
+        ]
+      }
     }
   }
-}
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>
