@@ -29,12 +29,9 @@
 
 <script type="text/javascript">
   export default {
-    data () {
-      return {
-        meetups: [
-          { imageUrl: 'http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/France/Paris/Paris%20small-xxlarge.jpg', id: 'sdjbs23423', title: 'Meetup Laz Vegas' },
-          { imageUrl: 'http://multi.speedybooker.com/en-GB/pool/paris-1.jpg', id: 'sdhj273656', title: 'Efiffel Tower' }
-        ]
+    computed: {
+      meetups () {
+        return this.$store.getters.featuredMeetups
       }
     },
     methods: {

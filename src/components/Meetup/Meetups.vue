@@ -2,12 +2,12 @@
 	<v-container>
 		<v-layout row wrap>
 			<v-flex xs12 sm10 md8 offset-sm1 offset-md2>
-				<v-card class="info">
+				<v-card class="info" v-for="meetup in meetups" :key="meetup.id">
 					<v-container fluid>
 						<v-layout row>
 							<v-flex xs5 sm4 md3>
 								<v-card-media
-									src="http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/France/Paris/Paris%20small-xxlarge.jpg"
+									:src="meetup.imageUrl"
 									height="130px">
 								</v-card-media>
 							</v-flex>
@@ -15,9 +15,9 @@
 								<v-card-title primary-title>
 									<div>
 										<h5 class="white--text" mb-0>
-											My Meetup
+											{{ meetup.title }}
 										</h5>
-										<div>17 th June 2017</div>
+										<div>{{ meetup.date }}</div>
 									</div>
 								</v-card-title>
 								<v-card-actions>
@@ -35,3 +35,13 @@
 		</v-layout>
 	</v-container>
 </template>
+
+<script type="text/javascript">
+	export default {
+		computed: {
+			meetups () {
+				return this.$store.getters.loadedMeetups
+			}
+		}
+	}
+</script>
