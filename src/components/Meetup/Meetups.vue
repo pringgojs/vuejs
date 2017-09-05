@@ -37,11 +37,11 @@
 </template>
 
 <script type="text/javascript">
-	export default {
-		computed: {
-			meetups () {
-				return this.$store.getters.loadedMeetups
-			}
-		}
-	}
+export default {
+  computed: {
+    meetups () {
+      return this.$store.getters.loadedMeetups
+    }
+  }
+}
 </script>
