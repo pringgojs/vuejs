@@ -18,12 +18,12 @@ new Vue({
   template: '<App/>',
   created () {
     firebase.initializeApp({
-      apiKey: "AIzaSyDCwe3xno3-KOe9UFjsHH8Q4wJ3tcneKMM",
-      authDomain: "vuejs-40957.firebaseapp.com",
-      databaseURL: "https://vuejs-40957.firebaseio.com",
-      projectId: "vuejs-40957",
-      storageBucket: "",
-      messagingSenderId: "990935005244"
+      apiKey: 'AIzaSyDCwe3xno3-KOe9UFjsHH8Q4wJ3tcneKMM',
+      authDomain: 'vuejs-40957.firebaseapp.com',
+      databaseURL: 'https://vuejs-40957.firebaseio.com',
+      projectId: 'vuejs-40957',
+      storageBucket: '',
+      messagingSenderId: '990935005244'
     })
   },
   components: { App }

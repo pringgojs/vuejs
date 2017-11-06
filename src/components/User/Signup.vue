@@ -57,22 +57,22 @@
 <script>
 export default {
   data () {
-	return {
-	  email: '',
-	  password: '',
-	  confirmPassword: ''
-	}
+    return {
+      email: '',
+      password: '',
+      confirmPassword: ''
+    }
   },
   computed: {
-	comparePasswords () {
-	  return this.password !== this.confirmPassword ? 'password do not match' : ''
-	}
+    comparePasswords () {
+      return this.password !== this.confirmPassword ? 'password do not match' : ''
+    }
   },
   methods: {
     onSignup () {
-	  // Vuex
-	  console.log({email: this.email, password: this.password, confirmPassword: this.confirmPassword})
-	}
+      // Vuex
+      console.log({email: this.email, password: this.password, confirmPassword: this.confirmPassword})
+    }
   }
 }
 </script>
